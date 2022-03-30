@@ -25,6 +25,9 @@
     <ClCompile Include="framework\game.c">
       <Filter>framework</Filter>
     </ClCompile>
+    <ClCompile Include="input.c">
+      <Filter>framework</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="std.h">
@@ -34,6 +37,9 @@
       <Filter>framework</Filter>
     </ClInclude>
     <ClInclude Include="framework\game.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
       <Filter>framework</Filter>
     </ClInclude>
   </ItemGroup>

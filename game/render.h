@@ -1,6 +1,7 @@
 #pragma once
 
 #include<stdbool.h>
+#include<stdbool.h>
 //<summary>
 //렌더러를 초기화한다.
 //</summary>
