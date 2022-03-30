@@ -8,6 +8,9 @@
     <Filter Include="Main">
       <UniqueIdentifier>{e67986f4-8b22-4c1d-ba80-1337b5fa4abe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="framework">
+      <UniqueIdentifier>{7d482d7b-f092-4837-8ab1-89c9f1434ff5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.c">
