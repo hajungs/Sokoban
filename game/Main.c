@@ -3,6 +3,7 @@
 
 int main(void)
 {
+
 	if (false == Initialize())
 	{
 		puts("게임을 로딩하는데 실패했습니다.");

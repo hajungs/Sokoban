@@ -19,10 +19,22 @@
     <ClCompile Include="std.c">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="renderer.c">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\game.c">
+      <Filter>framework</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="std.h">
       <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="render.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\game.h">
+      <Filter>framework</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
