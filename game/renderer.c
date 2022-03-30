@@ -5,14 +5,13 @@
 #define MAP_SIZE 24
 
 static char s_map[MAP_SIZE][MAP_SIZE] = {
-    "**",
-    " sokodomo  ",
-    "**"
+    "*********",
+    " sokoban ",
+    "*********"
 };
 static HANDLE s_consoleHandle;
 
-//SetConsolePosition °Á ³²±ä°Å
-//GetStdHandle °Á ³²±ä°Å
+
 bool InitializeRenderer()
 {
     s_consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
