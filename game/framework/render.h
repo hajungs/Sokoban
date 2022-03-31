@@ -15,9 +15,9 @@ bool InitializeRenderer();
 //<returns> 초기화 성공이면 true,아니면 false </returns>
 
 
-
-void RenderMap();
-
-
-void SetMessage(const char message);
-
+//
+//void RenderMap();
+//
+////
+////void SetMessage(const char message);
+//

@@ -1,5 +1,7 @@
 #include "std.h"
 #include "Render.h"
+#include "game.h"
+#include "stage.h"
 
 
 #define MAP_SIZE 24
@@ -71,11 +73,11 @@ void RenderMap()
     clear();
 
 }
-
-void SetMessage(const char message[24])
-{
-    strcpy_s(s_map[0], MAP_SIZE, message[24]);
-}
+//
+//void SetMessage(const char message[24])
+//{
+//    strcpy_s(s_map[0], MAP_SIZE, message[24]);
+//}
 
 //void SetKeyMessage(int keycode)
 //{

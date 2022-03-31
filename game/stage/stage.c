@@ -1,37 +1,83 @@
 #include "std.h"
-#include "stage.h"
-#include "Macro.h"
+#include "Stage.h"
+#define MAP_SIZE 24
 
-typedef struct tagstage
+static char s_map[MAP_SIZE][MAP_SIZE];
+static int32_t s_goalCount = 0;
+static int32_t s_boxOnGoalCount = 0;
+static int32_t s_playerX = 0;
+static int32_t s_playerY = 0;
+
+bool parseMapType(int i, int j, char mapType)
 {
-	char Map[MAP_SIZE][MAP_SIZE];
-} Stage;
+	switch (mapType)
+	{
+		// 각 맵 타입별로 해줘야 하는 일들
+	}
 
-static Stage s_currentStage;
+	// 반환은 행에 다다랐을 때
+} 
+void gotoxy(int x, int y)
+{
+
+
+
+}
+void clearStage()
+{
+	memset(s_map, ' ', sizeof(s_map));
+	for (size_t i = 0; i < MAP_SIZE; ++i)
+	{
+		s_map[i][MAP_SIZE - 1] = '\0';
+	}
+	s_goalCount = 0;
+	s_boxOnGoalCount = 0;
+	s_playerX = 0;
+	s_playerY = 0;
+}
 
 void LoadStage(EStageLevel level)
 {
-	assert(STAGE_01 <= level && level < STAGE_MAX); //단정문
+	assert(STAGE_01 <= level && level < STAGE_MAX);
 
-	static char path[MAX_PATH] = { 0 }; //파일경로 길이를 받을 문자배열
-
-	sprint_s(path, sizeof(path), "Stage/sage%02d", (int32_t)level); // stage -> 파일 , save-> 경로
+	static char path[MAX_PATH] = { 0 };
+	sprintf_s(path, sizeof(path), "Stage/Stage%02d.txt", (int32_t)level);
 
 	FILE* fp = NULL;
 	fopen_s(&fp, path, "r");
-	FILE* fp = fopen(path, "r");
 	assert(fp != NULL);
+
+	clearStage();
 
 	for (size_t i = 0; i < MAP_SIZE; ++i)
 	{
-		//fprintf_s(fp, "%s", s_currentStage.Map[i], sizeof(s_currentStage.Map[i])); //파일을 읽어오기 공백x
-		fgets(s_map[i]); //파일을 읽어오기
+		for (size_t j = 0; j < MAP_SIZE; ++j)
+		{
+			char ch = fgetc(fp);
+
+			if (false == parseMapType(i, j, ch))
+			{
+				break;
+			}
+		}
+
+		if (feof(fp))
+		{
+			break;
+		}
 	}
 
 	fclose(fp);
 }
 
+void UpdateStage()
+{
+	// 입력에 대해서 처리를 함
+
+	// 게임이 클리어 됐는지도 파악함
+}
+
 const char** GetMap()
 {
-	return s_currentStage.Map;
+	return s_map;
 }

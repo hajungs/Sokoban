@@ -10,20 +10,29 @@ bool Initialize()
     {
         return false;
     }
+    InitializeTimer();
+    LoadStage(STAGE_01);
+    
     return true;
 }
 
 
-void processInput()
-{
-    UpdateInput();
-}
-
-
+//void processInput()
+//{
+//    UpdateInput();
+//}
+//
+//void UpdateStage()
+//{
+//
+//}
+//
 
 void update()
 {
-    static float time = 0.0f;
+
+    UpdateStage();
+    /*static float time = 0.0f;
     static bool message = false;
 
     time += GetDeltaTime();
@@ -35,7 +44,7 @@ void update()
     if (message)
     {
         printf("hi");
-    }
+    }*/
 
  
   

@@ -1,24 +1,14 @@
 #pragma once
 
-//역할
-//1. 스테이지 불러오
-//2. 스테이지 현재 상황을 보관
-//3. 스테이지가 클리어 됐는지?
-// 
-//1. 스테이지를 불러와야함
-//2. 초기 세팅을 해야함
-//1. 플레이어 위치를 알아야 함
-//3. 게임 완료도 됐는지를 파악해야 함.
 
 typedef enum MapType
 {
-	MAPTYP_WALL = '#',
-	MAPTYP_PALYER = 'P',
-	MAPTYP_BOX = 'a',
-	MAPTYP_GOAL = 'O',
-	MAPTYP_BOX_ON_GOAL = '@',
-	MAPTYP_PATH = ' '
-
+	MAPTYPE_WALL = '#',
+	MAPTYPE_PLAYER = 'P',
+	MAPTYPE_BOX = 'a',
+	MAPTYPE_GOAL = 'O',
+	MAPTYPE_BOX_ON_GOAL = '@',
+	MAPTYPE_PATH = ' '
 } EMapType;
 
 typedef enum StageLevel
@@ -28,12 +18,17 @@ typedef enum StageLevel
 } EStageLevel;
 
 ///<summary>
-///스테이지를 로딩한다.
-/// 
-/// 
-
+/// 스테이지를 로딩한다.
+///</summary>
 void LoadStage(EStageLevel level);
 
+/// <summary>
+/// 스테이지를 업데이트한다.
+/// </summary>
+void UpdateStage();
 
 
-const char** GetMap();
+///<summary>
+/// 맵을 반환한다.
+///</summary>
+//const char** GetMap();
