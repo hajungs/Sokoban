@@ -144,17 +144,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="framework\game.c" />
-    <ClCompile Include="input.c" />
+    <ClCompile Include="framework\input.c" />
+    <ClCompile Include="framework\renderer.c" />
     <ClCompile Include="Main.c" />
-    <ClCompile Include="renderer.c" />
     <ClCompile Include="std.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework\game.h" />
-    <ClInclude Include="input.h" />
-    <ClInclude Include="render.h" />
+    <ClInclude Include="framework\input.h" />
+    <ClInclude Include="framework\render.h" />
     <ClInclude Include="std.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -4,12 +4,22 @@
 
 #define MAP_SIZE 24
 
-static char s_map[MAP_SIZE][MAP_SIZE] = {
-    "*********",
-    " sokoban ",
-    "*********"
-};
+static char s_map[MAP_SIZE][MAP_SIZE];
 static HANDLE s_consoleHandle;
+
+void clear()
+{
+    memset(s_map, ' ', sizeof(s_map));
+    // ' ' 공백을 출력
+
+    for (size_t i = 0; i < MAP_SIZE; ++i)
+    {
+        s_map[i][MAP_SIZE - 1] = '\0';
+        //우리가 하고 싶은 건 [콘솔 창을 지우는 것]
+        
+    }
+
+}
 
 
 bool InitializeRenderer()
@@ -21,16 +31,7 @@ bool InitializeRenderer()
         return false;
     }
 
-    CONSOLE_CURSOR_INFO    info;
-    info.dwSize = 100;
-    info.bVisible = false;
-
-    if (false == SetConsoleCursorInfo(s_consoleHandle, &info))
-    {
-        return false;
-    } 
-
-        return true;
+    return true;
 }
 
 //테어링이 나타나는 현상은 우리가보는 화면에 다음프레임이 출력되어 찢어지는 현상이 나타나는것.
@@ -40,13 +41,21 @@ void RenderMap()
 {
     const static COORD initialPos = { 0, 0 };
     const static CONSOLE_CURSOR_INFO info = { 100, false };
+    
     SetConsoleCursorPosition(s_consoleHandle, initialPos);
     SetConsoleCursorInfo(s_consoleHandle, &info);
 
-    //memcpy(s_map, s_backBuffer, sizeof(s_map));
-
-    for (int i = 0; i < MAP_SIZE; i++)
+    for (size_t i = 0; i < MAP_SIZE; i++)
     {
         puts(s_map[i]);
     }
+    //출력 후에 현재 프레임을 지움.
+
+    clear();
+
+}
+
+void SetKeyMessage(int keycode)
+{
+    sprintf_s(s_map[0], sizeof(s_map[0]), "%c키가 눌림", keycode);
 }

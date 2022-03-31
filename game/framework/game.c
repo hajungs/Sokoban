@@ -1,6 +1,7 @@
 #include "std.h"
 #include "Game.h"
 #include "Render.h"
+#include "Input.h"
 
 bool Initialize()
 {
@@ -13,12 +14,28 @@ bool Initialize()
 
 void processInput()
 {
-
+    UpdateInput();
 }
 
 void update()
 {
-
+   
+    if (GetButton(KEYCODE_W))
+    {
+        SetKeyMessage(KEYCODE_W);
+    }
+    else if (GetButton(KEYCODE_D))
+    {
+        SetKeyMessage(KEYCODE_D);
+    }
+    else if (GetButton(KEYCODE_S))
+    {
+        SetKeyMessage(KEYCODE_S);
+    }
+    else if (GetButton(KEYCODE_A))
+    {
+        SetKeyMessage(KEYCODE_A);
+    }
 
 }
 
@@ -42,5 +59,6 @@ int32_t Run()
         //·»´õ¸µ
         render();
     }
+    return 0;
 
 }
