@@ -28,6 +28,9 @@
     <ClCompile Include="framework\renderer.c">
       <Filter>framework</Filter>
     </ClCompile>
+    <ClCompile Include="framework\Timer.c">
+      <Filter>framework</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="std.h">
@@ -40,6 +43,9 @@
       <Filter>framework</Filter>
     </ClInclude>
     <ClInclude Include="framework\render.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\Timer.h">
       <Filter>framework</Filter>
     </ClInclude>
   </ItemGroup>

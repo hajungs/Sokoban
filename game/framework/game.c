@@ -52,6 +52,9 @@ int32_t Run()
     //Game Loop의 전체를 Frame
     while (true)
     {
+
+       
+
         //입력처리
         processInput();
         //업데이트
