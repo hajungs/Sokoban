@@ -46,6 +46,10 @@ void RenderMap()
     SetConsoleCursorPosition(s_consoleHandle, initialPos);
     SetConsoleCursorInfo(s_consoleHandle, &info);
 
+    const char** stage = GetMap();
+
+    memcpy(s_map, stage, sizeof(s_map));
+
     /*clock_t tick = clock();*/
 
    /* sprintf_s(s_map[0], sizeof(s_map[0]), "Delta Time: %f", GetDeltaTime());

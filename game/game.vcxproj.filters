@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Main">
       <UniqueIdentifier>{e67986f4-8b22-4c1d-ba80-1337b5fa4abe}</UniqueIdentifier>
     </Filter>
     <Filter Include="framework">
       <UniqueIdentifier>{7d482d7b-f092-4837-8ab1-89c9f1434ff5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game2">
+      <UniqueIdentifier>{9d4064b6-c10c-4956-bf1c-c6abf63cebb3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -31,6 +30,9 @@
     <ClCompile Include="framework\Timer.c">
       <Filter>framework</Filter>
     </ClCompile>
+    <ClCompile Include="stage\stage.c">
+      <Filter>game2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="std.h">
@@ -47,6 +49,12 @@
     </ClInclude>
     <ClInclude Include="framework\Timer.h">
       <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="stage\Macro.h">
+      <Filter>game2</Filter>
+    </ClInclude>
+    <ClInclude Include="stage\stage.h">
+      <Filter>game2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
