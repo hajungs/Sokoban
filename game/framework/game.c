@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "Render.h"
 #include "Input.h"
+#include "Timer.h"
 
 bool Initialize()
 {
@@ -12,15 +13,41 @@ bool Initialize()
     return true;
 }
 
+
 void processInput()
 {
     UpdateInput();
 }
 
+
+
 void update()
 {
+    static float time = 0.0f;
+    static bool message = false;
+
+    time += GetDeltaTime();
+    if (time > 0.5f)
+    {
+        time = 0.0f;
+        message = !message;
+    }
+    if (message)
+    {
+        printf("hi");
+    }
+
+ 
+  
    
-    if (GetButton(KEYCODE_W))
+
+   //0.5초 간격으로 특정 메시지를 깜빡이기
+   
+  
+   
+
+
+   /* if (GetButton(KEYCODE_W))
     {
         SetKeyMessage(KEYCODE_W);
     }
@@ -35,7 +62,7 @@ void update()
     else if (GetButton(KEYCODE_A))
     {
         SetKeyMessage(KEYCODE_A);
-    }
+    }*/
 
 }
 
@@ -53,7 +80,7 @@ int32_t Run()
     while (true)
     {
 
-       
+        UpdateTimer();
 
         //입력처리
         processInput();

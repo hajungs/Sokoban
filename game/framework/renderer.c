@@ -37,6 +37,7 @@ bool InitializeRenderer()
 //테어링이 나타나는 현상은 우리가보는 화면에 다음프레임이 출력되어 찢어지는 현상이 나타나는것.
 //double buffering을 이용하여 다음 프레임은 back buffer에 두고 현재 버퍼와 스위치하는 것 => 그러면 화면이 끊기는 현상이 줄어든다.
 //핵심은 버퍼를 두개 사용한다.
+
 void RenderMap()
 {
     const static COORD initialPos = { 0, 0 };
@@ -45,6 +46,18 @@ void RenderMap()
     SetConsoleCursorPosition(s_consoleHandle, initialPos);
     SetConsoleCursorInfo(s_consoleHandle, &info);
 
+    /*clock_t tick = clock();*/
+
+   /* sprintf_s(s_map[0], sizeof(s_map[0]), "Delta Time: %f", GetDeltaTime());
+
+    clock_t fps =1 / GetDeltaTime();
+    sprintf_s(s_map[1], sizeof(s_map[1]), "FPS : %d", (int32_t)(1 / GetDeltaTime()));
+    */
+  
+    
+    // 1: deltaIme = x : 1
+   // x = 1/ deltaTime
+    
     for (size_t i = 0; i < MAP_SIZE; i++)
     {
         puts(s_map[i]);
@@ -55,7 +68,12 @@ void RenderMap()
 
 }
 
-void SetKeyMessage(int keycode)
+void SetMessage(const char message[24])
 {
-    sprintf_s(s_map[0], sizeof(s_map[0]), "%c키가 눌림", keycode);
+    strcpy_s(s_map[0], MAP_SIZE, message[24]);
 }
+
+//void SetKeyMessage(int keycode)
+//{
+//    sprintf_s(s_map[0], sizeof(s_map[0]), "%c키가 눌림", keycode);
+//}

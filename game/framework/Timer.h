@@ -2,7 +2,7 @@
 
 
 //타이머를 초기화한다
-void InitializeTinmer();
+void InitializeTimer();
 
 //타이머를 최신화 한다.
 void UpdateTimer();

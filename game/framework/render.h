@@ -2,6 +2,7 @@
 
 #include<stdbool.h>
 #include<stdbool.h>
+
 //<summary>
 //렌더러를 초기화한다.
 //</summary>
@@ -17,5 +18,6 @@ bool InitializeRenderer();
 
 void RenderMap();
 
-void SetKeyMessage(int32_t keycode);
+
+void SetMessage(const char message);
 
